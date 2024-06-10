@@ -46,4 +46,4 @@ The project follows the Clean Architecture and MVVM design patterns. Here's a br
 
 ## Images
 
-You can find there all the images of the app in this link [Images](https://github.com/vives-android/23-24-final-assignment-sem-2-Odonata971/tree/main/app/src/main/java/com/florianfabre/countrynews/images)
+You can find there all the images of the app in this link [Images](https://github.com/vives-android/23-24-final-assignment-sem-2-Odonata971/tree/main/app/src/main/java/com/florianfabre/countrynews/images) 
