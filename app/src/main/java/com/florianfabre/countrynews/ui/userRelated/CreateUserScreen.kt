@@ -39,7 +39,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.florianfabre.countrynews.R
-import com.florianfabre.countrynews.utilities.ViewModelProvider
+import com.florianfabre.countrynews.utilities.AppViewModelProvider
 import com.florianfabre.countrynews.ui.navigation.NavigationDestination
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -66,7 +66,7 @@ object CreateUserDestination : NavigationDestination {
 @Composable
 fun CreateUserScreen(
     modifier: Modifier = Modifier,
-    createUserViewModel: CreateUserViewModel = viewModel(factory = ViewModelProvider.Factory),
+    createUserViewModel: CreateUserViewModel = viewModel(factory = AppViewModelProvider.Factory),
     createSuccessFull: () -> Unit
 ) {
     val state = createUserViewModel.uiState.collectAsState()

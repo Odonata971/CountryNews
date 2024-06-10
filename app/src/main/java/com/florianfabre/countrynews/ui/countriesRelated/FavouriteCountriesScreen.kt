@@ -27,7 +27,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.florianfabre.countrynews.R
 import com.florianfabre.countrynews.data.model.Country
-import com.florianfabre.countrynews.utilities.ViewModelProvider
+import com.florianfabre.countrynews.utilities.AppViewModelProvider
 import com.florianfabre.countrynews.ui.navigation.NavigationDestination
 
 
@@ -51,7 +51,7 @@ object FavouriteCountriesDestination : NavigationDestination {
 @Composable
 fun FavouriteCountriesScreen(
     modifier: Modifier = Modifier,
-    viewModel: FavouriteCountriesViewModel = viewModel(factory = ViewModelProvider.Factory),
+    viewModel: FavouriteCountriesViewModel = viewModel(factory = AppViewModelProvider.Factory),
     onCountrySelected: (String) -> Unit = {}
 ) {
     val state = viewModel.uiState.collectAsState()

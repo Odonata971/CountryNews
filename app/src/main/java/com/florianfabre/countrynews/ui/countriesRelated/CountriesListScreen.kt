@@ -42,7 +42,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.annotation.ExperimentalCoilApi
 import com.florianfabre.countrynews.R
 import com.florianfabre.countrynews.data.model.Country
-import com.florianfabre.countrynews.utilities.ViewModelProvider
+import com.florianfabre.countrynews.utilities.AppViewModelProvider
 import com.florianfabre.countrynews.utilities.loadSvgFromUrl
 import com.florianfabre.countrynews.ui.navigation.NavigationDestination
 import kotlinx.coroutines.async
@@ -68,7 +68,7 @@ object CountriesListDestination : NavigationDestination {
 @Composable
 fun CountriesListScreen(
     modifier: Modifier = Modifier,
-    viewModel: CountriesListViewModel = viewModel(factory = ViewModelProvider.Factory),
+    viewModel: CountriesListViewModel = viewModel(factory = AppViewModelProvider.Factory),
     onCountrySelected: (String) -> Unit = {}
 ) {
     val state = viewModel.uiState.collectAsState()

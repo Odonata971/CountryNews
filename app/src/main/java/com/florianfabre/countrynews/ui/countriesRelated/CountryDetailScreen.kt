@@ -44,7 +44,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.florianfabre.countrynews.R
 import com.florianfabre.countrynews.utilities.SingletonLoggedInUser
 import com.florianfabre.countrynews.data.model.Country
-import com.florianfabre.countrynews.utilities.ViewModelProvider
+import com.florianfabre.countrynews.utilities.AppViewModelProvider
 import com.florianfabre.countrynews.utilities.loadSvgFromUrl
 import com.florianfabre.countrynews.ui.navigation.NavigationDestination
 import kotlinx.coroutines.async
@@ -59,7 +59,7 @@ object CountryDetailDestination : NavigationDestination {
 @Composable
 fun CountryDetailsScreen(
     modifier: Modifier = Modifier,
-    viewModel: CountryDetailViewModel = viewModel(factory = ViewModelProvider.Factory),
+    viewModel: CountryDetailViewModel = viewModel(factory = AppViewModelProvider.Factory),
     asFavourite :() -> Unit = {}) {
 
     val uiState = viewModel.uiState.collectAsState();
