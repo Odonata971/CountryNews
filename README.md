@@ -1,2 +1,3 @@
-# CountryNews
-CountryNews is an app to have loads of informations on each country of the world, including the latest news
+# 23-24-final-assignment-sem-2-Florian FABRE
+
+23-24-final-assignment-sem-2-Florian FABRE created by GitHub Classroom
