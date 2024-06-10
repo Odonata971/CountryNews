@@ -30,7 +30,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.florianfabre.countrynews.R
 import com.florianfabre.countrynews.utilities.SingletonLoggedInUser
-import com.florianfabre.countrynews.utilities.ViewModelProvider
+import com.florianfabre.countrynews.utilities.AppViewModelProvider
 import com.florianfabre.countrynews.ui.navigation.NavigationDestination
 
 
@@ -54,7 +54,7 @@ object ProfileDestination : NavigationDestination {
 @Composable
 fun ProfileScreen(
     modifier: Modifier = Modifier,
-    profileViewModel: ProfileViewModel = viewModel(factory = ViewModelProvider.Factory),
+    profileViewModel: ProfileViewModel = viewModel(factory = AppViewModelProvider.Factory),
     logOutDelete : () -> Unit
     ) {
     val state = profileViewModel.uiState.collectAsState()
@@ -113,7 +113,7 @@ fun ProfileScreen(
 
             Spacer(modifier = Modifier.height(25.dp))
             OutlinedTextField(
-                value = profileViewModel.username,
+                value = profileViewModel.password,
                 onValueChange = { },
                 label = { Text(stringResource(id = R.string.password)) },
                 visualTransformation = if (state.value.isPasswordVisible) VisualTransformation.None else PasswordVisualTransformation(),
