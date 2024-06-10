@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">CountryNews</string>
+    <string name="countriesListTitle">Countries List</string>
+    <string name="favouriteCountriesTitle">Favourite Countries</string>
+    <string name="loginTitle">Login page</string>
+    <string name="accountCreated">Account created successfully</string>
+    <string name="createUserTitle">Create User</string>
+    <string name="countryDetailTitle">Country Detail</string>
+    <string name="logOutSuccess">Logged out successfully</string>
+    <string name="profileTitle">Profile</string>
+    <string name="deleteSuccess">Account deleted successfully</string>
+    <string name="search">Search</string>
+    <string name="noFavouriteCountriesAdded">No favourite countries added
+        for the moment</string>
+    <string name="noFavouriteCountriesFound">No favourite countries found
+        for this research</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="hidePassword">Hide password</string>
+    <string name="showPassword">Show password</string>
+    <string name="login">Login</string>
+    <string name="noAccount">Don\'t have an account?</string>
+    <string name="createAccount">Create an account</string>
+    <string name="logoutText">Do you want to log out ?</string>
+    <string name="deleteAccountText">Do you want to delete the account
+        ?</string>
+    <string name="logout">Log out</string>
+    <string name="deleteAccount">Delete account</string>
+</resources>
