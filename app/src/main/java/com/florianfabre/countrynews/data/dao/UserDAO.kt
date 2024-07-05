@@ -24,9 +24,6 @@ interface UserDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertUsers(users: List<User>)
 
-    @Query("SELECT * FROM User WHERE username = :loginName AND password = :password")
-    fun getUser(loginName: String, password: String): User?
-
     @Query("SELECT * FROM User WHERE username = :loginName")
     fun getUserByLoginName(loginName: String): User?
 
