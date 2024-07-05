@@ -41,23 +41,14 @@ class CountryRepository(
     fun getAllCountriesReverse() = countryDao.getAllCountriesReverse()
 
     // Add the following methods to the CountryRepository class
-    suspend fun addFavourite(countryId: Int, userId: Int) {
-        withContext(Dispatchers.IO) {
-            favouriteDao.addFavourite(Favourite(countryId, userId))
-        }
-    }
+    suspend fun addFavourite(countryId: Int, userId: Int) = favouriteDao
+        .addFavourite(Favourite(countryId, userId))
 
-    suspend fun removeFavourite(countryId: Int, userId: Int) {
-        withContext(Dispatchers.IO) {
-            favouriteDao.removeFavourite(Favourite(countryId, userId))
-        }
-    }
+    suspend fun removeFavourite(countryId: Int, userId: Int) = favouriteDao
+        .removeFavourite(Favourite(countryId, userId))
 
-    suspend fun isFavourite(countryId: Int, userId: Int): Boolean {
-        return withContext(Dispatchers.IO) {
-            favouriteDao.isFavourite(countryId, userId)
-        }
-    }
+    suspend fun isFavourite(countryId: Int, userId: Int): Boolean = favouriteDao
+        .isFavourite(countryId, userId)
 
     suspend fun getFavourites(userId: Int): List<Country> {
         return withContext(Dispatchers.IO) {
