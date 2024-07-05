@@ -1,4 +1,4 @@
-package com.florianfabre.countrynews.app
+package com.florianfabre.countrynews
 
 import android.app.Application
 import com.florianfabre.countrynews.data.container.AppContainer
