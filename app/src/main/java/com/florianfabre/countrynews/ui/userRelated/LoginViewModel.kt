@@ -41,9 +41,11 @@ class LoginViewModel(private val repository: UserRepository): ViewModel() {
         private set
     var password by mutableStateOf("azertyuiop")
         private set
+
     fun updateUsername(username: String) {
         this.username = username
     }
+
     fun updatePassword(password: String) {
         this.password = password
     }
@@ -58,17 +60,24 @@ class LoginViewModel(private val repository: UserRepository): ViewModel() {
         _uiState.update {
             it.copy(isLoading = true)
         }
-        val user = withContext(Dispatchers.IO) {
-            repository.getUser(username, password)
+        val isVerified = withContext(Dispatchers.IO) {
+            repository.verifyUser(username, password)
         }
+        val user = if (isVerified) {
+            withContext(Dispatchers.IO) {
+                repository.getUserByLoginName(username)
+            }
+        } else null
+
         if (user == null) {
             _uiState.update {
-                it.copy(errorMessage = "Invalid username or password")
+                it.copy(errorMessage = "Invalid username or password", isLoading = false)
             }
-        }
-        SingletonLoggedInUser.logIn(user)
-        _uiState.update {
-            it.copy(isLoading = false)
+        } else {
+            SingletonLoggedInUser.logIn(user)
+            _uiState.update {
+                it.copy(isLoading = false)
+            }
         }
         return user
     }

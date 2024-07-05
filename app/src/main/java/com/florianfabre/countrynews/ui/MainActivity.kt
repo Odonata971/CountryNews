@@ -9,7 +9,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.lifecycleScope
-import com.florianfabre.countrynews.app.CountryNewsApplication
+import com.florianfabre.countrynews.CountryNewsApplication
 import com.florianfabre.countrynews.data.model.User
 import com.florianfabre.countrynews.ui.navigation.CountryNews
 import com.florianfabre.countrynews.utilities.isOnline
@@ -19,6 +19,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import com.florianfabre.countrynews.utilities.AppViewModelProvider
 import androidx.lifecycle.ViewModelProvider
+import org.mindrot.jbcrypt.BCrypt
 
 
 /**
@@ -44,8 +45,7 @@ class MainActivity : ComponentActivity() {
         lifecycleScope.launch {
             val userRepository = application.container.userRepository
             val users = listOf(
-                User(userId = 0, username = "Odonata", password = "azertyuiop"),
-                User(userId = 1,username = "dirkhostens", password =  "password"),
+                User(userId = 0, username = "Odonata", password = BCrypt.hashpw("azertyuiop", BCrypt.gensalt())),
                 // add more users here
             )
             withContext(Dispatchers.IO) {
