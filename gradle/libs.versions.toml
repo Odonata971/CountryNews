@@ -1,5 +1,10 @@
 [versions]
 agp = "8.4.1"
+androidsvgAar = "1.4"
+coilCompose = "2.1.0"
+converterGson = "2.9.0"
+jbcrypt = "0.4"
+junitJunit = "4.12"
 kotlin = "1.9.0"
 coreKtx = "1.13.0"
 junit = "4.13.2"
@@ -8,6 +13,7 @@ espressoCore = "3.5.1"
 lifecycleRuntimeKtx = "2.8.1"
 activityCompose = "1.9.0"
 composeBom = "2023.08.00"
+mockk = "1.12.0"
 navigationRuntimeKtx = "2.7.7"
 lifecycleLivedataKtx = "2.8.1"
 runtimeLivedata = "1.6.7"
@@ -20,7 +26,11 @@ benchmarkMacro = "1.2.4"
 leanback = "1.0.0"
 
 [libraries]
+androidsvg-aar = { module = "com.caverock:androidsvg-aar", version.ref = "androidsvgAar" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
+converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
+jbcrypt = { module = "org.mindrot:jbcrypt", version.ref = "jbcrypt" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -44,6 +54,8 @@ androidx-junit-ktx = { group = "androidx.test.ext", name = "junit-ktx", version.
 androidx-material3-android = { group = "androidx.compose.material3", name = "material3-android", version.ref = "material3Android" }
 androidx-benchmark-macro = { group = "androidx.benchmark", name = "benchmark-macro", version.ref = "benchmarkMacro" }
 androidx-leanback = { group = "androidx.leanback", name = "leanback", version.ref = "leanback" }
+junit-v412 = { module = "junit:junit", version.ref = "junitJunit" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

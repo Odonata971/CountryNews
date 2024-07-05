@@ -5,7 +5,7 @@ import androidx.lifecycle.createSavedStateHandle
 import androidx.lifecycle.viewmodel.CreationExtras
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import com.florianfabre.countrynews.app.CountryNewsApplication
+import com.florianfabre.countrynews.CountryNewsApplication
 import com.florianfabre.countrynews.ui.ApiCaller
 import com.florianfabre.countrynews.ui.countriesRelated.CountriesListViewModel
 import com.florianfabre.countrynews.ui.countriesRelated.CountryDetailViewModel

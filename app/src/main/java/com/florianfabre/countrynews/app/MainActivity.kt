@@ -10,6 +10,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import com.florianfabre.countrynews.CountryNewsApplication
 import com.florianfabre.countrynews.data.model.User
 import com.florianfabre.countrynews.data.API.ApiCaller
 import com.florianfabre.countrynews.utilities.isOnline

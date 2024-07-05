@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.AP
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import com.florianfabre.countrynews.app.CountryNewsApplication
+import com.florianfabre.countrynews.CountryNewsApplication
 import com.florianfabre.countrynews.data.model.Country
 import com.florianfabre.countrynews.data.repository.CountryRepository
 import kotlinx.coroutines.Dispatchers
