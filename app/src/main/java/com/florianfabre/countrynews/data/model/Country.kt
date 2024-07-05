@@ -1,5 +1,6 @@
 package com.florianfabre.countrynews.data.model
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
@@ -17,9 +18,11 @@ import androidx.room.PrimaryKey
  * @property capital The capital of the country.
  * @property dialCode The dialing code of the country.
  */
-@Entity(indices = [Index(value = ["iso2"], unique = true)])
+@Entity(indices = [Index(value = ["iso2"], unique = true)], tableName =
+"Country")
 data class Country(
     @PrimaryKey
+    @ColumnInfo(name = "countryId")
     var countryId: Int? = null,
     val name: String,
     val iso2: String,

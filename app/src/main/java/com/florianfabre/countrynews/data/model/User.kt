@@ -1,5 +1,6 @@
 package com.florianfabre.countrynews.data.model
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
@@ -13,6 +14,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "User")
 data class User (
     @PrimaryKey
+    @ColumnInfo(name = "userId")
     var userId: Int? = null,
     val username: String,
     val password: String
