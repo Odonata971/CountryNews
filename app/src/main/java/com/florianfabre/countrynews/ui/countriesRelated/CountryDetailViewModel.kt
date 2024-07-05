@@ -1,12 +1,14 @@
 package com.florianfabre.countrynews.ui.countriesRelated
 
 import android.util.Log
+import androidx.compose.runtime.collectAsState
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.florianfabre.countrynews.data.model.Country
 import com.florianfabre.countrynews.data.repository.CountryRepository
+import com.florianfabre.countrynews.utilities.SingletonLoggedInUser
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.update
@@ -54,7 +56,14 @@ class CountryDetailViewModel(
     init {
         viewModelScope.launch {
             val country = getCountryByIso2(countryIso2)
-            country.countryId?.let { isFavourite(it, 1) }
+            Log.d("CountryDetailViewModel", "countryId : ${country.countryId}  userid" +
+                    " : "
+            )
+            SingletonLoggedInUser.getCurrentUser()?.userId?.let {
+                isFavourite(countryId = country.countryId!!, userId =
+                it
+                )
+            }
             countryLiveData.postValue(country)
         }
     }
@@ -79,6 +88,9 @@ class CountryDetailViewModel(
      */
     fun addFavourite(countryId: Int, userId: Int) {
         viewModelScope.launch {
+            Log.d("CountryDetailViewModel", "countryId : $countryId  userid" +
+                    " : $userId"
+            )
             repository.addFavourite(countryId, userId)
             _uiState.update { it.copy(isFavourite = true) }
             Log.d("CountryDetailViewModel", "addFavourite")
