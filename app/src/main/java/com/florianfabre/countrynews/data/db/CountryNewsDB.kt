@@ -21,7 +21,7 @@ Database class based on the Singleton pattern.
         User::class,
         Favourite::class
     ],
-    version = 10,
+    version = 1,
     exportSchema = false
 )
 
